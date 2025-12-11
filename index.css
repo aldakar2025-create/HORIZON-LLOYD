@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Roboto', sans-serif;
+  --font-heading: 'Barlow', sans-serif;
+
+  /* Matches the dark industrial look from the screenshot */
+  --color-background: hsl(0 0% 10%); 
+  --color-foreground: hsl(0 0% 95%);
+
+  --color-card: hsl(0 0% 15%);
+  --color-card-foreground: hsl(0 0% 95%);
+
+  --color-popover: hsl(0 0% 12%);
+  --color-popover-foreground: hsl(0 0% 95%);
+
+  /* The Red Accent from the screenshot */
+  --color-primary: hsl(354 70% 45%); /* A darker, more industrial red */
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --color-secondary: hsl(0 0% 20%);
+  --color-secondary-foreground: hsl(0 0% 95%);
+
+  --color-muted: hsl(0 0% 25%);
+  --color-muted-foreground: hsl(0 0% 70%);
+
+  --color-accent: hsl(0 0% 20%);
+  --color-accent-foreground: hsl(0 0% 95%);
+
+  --color-destructive: hsl(0 62% 30%);
+  --color-destructive-foreground: hsl(0 0% 95%);
+
+  --color-border: hsl(0 0% 20%);
+  --color-input: hsl(0 0% 20%);
+  --color-ring: hsl(354 70% 45%);
+
+  --radius-sm: 0rem; /* Industrial look - sharp corners */
+  --radius-md: 0.1rem;
+  --radius-lg: 0.2rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold uppercase; /* Uppercase headings fit the style */
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 25%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(354 70% 45%);
+}
